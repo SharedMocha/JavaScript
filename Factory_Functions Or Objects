@@ -1,0 +1,48 @@
+//factory object
+const menu = {
+  _course:{
+    appetizers:[],
+      mains:[],
+      deserts:[]
+  },
+  get appetizers(){return this._course.appetizers},
+  get mains(){return this._course.mains},
+  get deserts(){return this._course.deserts},
+
+  set appetizers(appetizerIn){this._course.appetizers = appetizerIn},
+  set mains(mainsIn){this._course.mains = mainsIn},
+  set deserts(desertsIn){this._course.deserts = desertsIn},
+
+  get courses(){return {
+    appetizers:this.appetizers,
+    mains:this.mains,
+    deserts:this.deserts,
+  }},
+  addDishToCourse(courseName,dishName,dishPrice){
+    const dish = {
+      name:dishName,
+      dishPrice:dishPrice
+    }
+    this._course[courseName].push(dish);
+  },
+  getRandomDishFromCourse(courseName){
+    
+      let temp = this._course[courseName];
+      let temp2 = Math.floor(Math.random() * temp.length);
+      return temp[temp2];
+  }
+};
+
+//Calling setter and getter methods
+//setters
+menu.appetizers = ['chicken','mutton'];
+menu.mains = ['biryani1','biryani2'];
+menu.deserts = ['1','2'];
+
+//getters
+console.log(menu.appetizers);
+
+//calling functions ->
+menu.addDishToCourse('appetizers', 'Caesar Salad', 4.25);
+let meal  = menu.getRandomDishFromCourse('appetizers');
+console.log(meal);
