@@ -1,0 +1,35 @@
+//check this ->https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/async+await+GET+diagram.svg
+
+const getData = async () => {
+  try {
+    const response = await fetch('https://api-to-call.com/endpoint');
+    if (response.ok) {
+      const jsonResponse = await response.json();
+      return jsonResponse;
+    }
+    throw new Error('Request failed!');
+  } catch (error) {
+    console.log(error);	
+  }
+}
+
+
+--------------------------------------------------------
+post-->
+https://s3.amazonaws.com/codecademy-content/courses/intermediate-javascript-requests/diagrams/async+await+POST+transparent.svg
+
+const getData = async () => {
+  try {
+    const response = await fetch('https://api-to-call.com/endpoint', {
+      method: 'POST',
+      body: JSON.stringify({id: 200})
+    })
+    if(response.ok){
+      const jsonResponse = await response.json();
+      return jsonResponse;
+    }
+    throw new Error('Request failed!');
+  } catch(error) {
+    console.log(error);
+  }
+}
