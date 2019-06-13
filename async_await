@@ -1,14 +1,18 @@
 ***VVIMP--ASYNC Returns  promise-->meaning u do0nt need to say 'new Promise' in the function that is async-  ] ..For async await to work--u create child functions which have promise and call those child functions inside a aprent function with keyword async and no promise.
-example-
-async function makeBeans() {
-  let type = await shopForBeans();
-  let isSoft = await soakTheBeans(type);
-  let dinner = await cookTheBeans(isSoft);
-  console.log(dinner);
+example- with correct syntax and try -catch
+async function hostDinnerParty() {
+ try {
+   let dinner = await cookBeanSouffle();
+   console.log(`${dinner} is served!`);
+ }
+ catch(error){
+   console.log(error);
+   console.log('Ordering a pizza!');
+ }
 }
 
 **** vvimp--tRUE BEAUTY OF ASYNC AWAIT IS WHEN WE USE TO CHAIN MULTIPE PROMISES.. instead of using .then().then()..async/await is wayu better
-
+**use try catch ..isntead of .cat() for promise
 
 ASYNC---->
 The async keyword is used to write functions that handle asynchronous actions. We wrap our asynchronous logic inside a function prepended with the async keyword. Then, we invoke that function.
@@ -64,3 +68,29 @@ asyncFuncExample(); // Prints: I am resolved now!
 Within our async function, asyncFuncExample(), we use await to halt our execution until myPromise() is resolved and assign its resolved value to the variable resolvedValue. Then we log resolvedValue to the console. We’re able to handle the logic for a promise in a way that reads like synchronous code.
 
   
+-------------------
+try--catch
+async function usingTryCatch() {
+ try {
+   let resolveValue = await asyncFunction('thing that will fail');
+   let secondValue = await secondAsyncFunction(resolveValue);
+ } catch (err) {
+   // Catches any errors in the try block
+   console.log(err);
+ }
+}
+
+usingTryCatch();
+
+
+------
+Remember, since async functions return promises we can still use native promise’s .catch() with an async function-
+--------
+async function usingPromiseCatch() {
+   let resolveValue = await asyncFunction('thing that will fail');
+}
+
+let rejectedPromise = usingPromiseCatch();
+rejectedPromise.catch((rejectValue) => {
+console.log(rejectValue);
+})
