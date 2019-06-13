@@ -1,0 +1,43 @@
+Types of export->
+1.)module.export  = Employee //HERE U NEED TO CREATE AN OBJECT AND ADD PROPERTIES AND METHODS INTO IT 
+2.) Es6->)export default Employee;//sAME AS MODULE.EXPORT ->//HERE U NEED TO CREATE AN OBJECT AND ADD PROPERTIES AND METHODS INTO IT 
+2.) ES5 ->Names) export {calculateTax}'; // This is named export where properties and functions can be seperate not tied into an object.
+3.)Es6->Named and alias-) export {tax as calculateTax}'; //Same as named export with an alias
+
+
+Types of import
+var Employees = require("./Employees.js");  from './employee'; //for module.export  = Employee
+import Employee from './employee';
+import { specialty, isVegetarian } from './menu';  // for export {calculateTax}';  or  export {tax as calculateTax}';
+
+Export--> Code
+
+let availableAirplanes = [{
+ name: 'AeroJet',
+ fuelCapacity: 800,
+ availableStaff: ['pilots', 'flightAttendants', 'engineers', 'medicalAssistance', 'sensorOperators'],
+}, 
+{name: 'SkyJet',
+ fuelCapacity: 500,
+ availableStaff: ['pilots', 'flightAttendants']
+}];
+
+let flightRequirements = {
+  requiredStaff: 4,
+};
+
+function meetsStaffRequirements(availableStaff, requiredStaff) {
+  if (availableStaff.length >= requiredStaff) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+export {availableAirplanes,flightRequirements,meetsStaffRequirements};
+
+
+Import->
+import { specialty, isVegetarian } from './menu';
+
+console.log(specialty);
