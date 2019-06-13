@@ -1,4 +1,5 @@
-VVIMP--ASYNC Returns  promise-->meaning u do0nt need to say 'new Promise' in the function that is async-  
+VVIMP--ASYNC Returns  promise-->meaning u do0nt need to say 'new Promise' in the function that is async-  ]
+vvimp--tRUE BEAUTY OF ASYNC AWAIT IS WHEN WE USE TO CHAIN MULTIPE PROMISES.. instead of using .then().then()..async/await is wayu better
 
 
 ASYNC---->
