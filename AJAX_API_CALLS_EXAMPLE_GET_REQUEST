@@ -6,11 +6,16 @@
 const xhr = new XMLHttpRequest();
 const url = "https://api-to-call.com/endpoint";
 xhr.responseType = 'json';
+const queryParams = 'rel_rhy=';
+const wordQuery = 'TEST';
+const endpoint = `${url}${queryParams}${wordQuery}`;
+
+
 xhr.onreadystatechange =() => {
   if (xhr.readyState === XMLHttpRequest.DONE) {
     return xhr.response;
 }
 }
 
-xhr.open('GET',url); //.open() creates a new request and the arguments passed in determine the type and URL of the request.
+xhr.open('GET',endpoint); //.open() creates a new request and the arguments passed in determine the type and URL of the request.
 xhr.send();
