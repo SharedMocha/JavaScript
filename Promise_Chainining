@@ -1,4 +1,9 @@
-**Remember to use return whenchaining promise..
+Avoiding Common Mistakes when chainging==
+Mistake 2: Forgetting to return a promise. //if we miss we run on orginal prmise than the one we wanted.
+Mistake 1: Nesting promises instead of chaining them.
+
+
+
 One common pattern we’ll see with asynchronous programming is multiple operations which depend on each other to execute or that must be executed in a certain order. We might make one request to a database and use the data returned to us to make another request and so on! Let’s illustrate this with another cleaning example, washing clothes:
 
 This process of chaining promises together is called composition. Promises are designed with composition in mind! Here’s a simple promise chain in code:
