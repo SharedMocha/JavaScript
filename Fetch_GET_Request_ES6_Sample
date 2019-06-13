@@ -1,0 +1,30 @@
+
+
+//response is called only when succesful-you can give any name i gguess
+fetch('https://api-to-call.com/endpoint').then(response => {
+  //The reason we’re testing the ok property of the response object is that it will be a Boolean value. If there were no errors response.ok will be true and then your code will return response.json().
+    if (response.ok) {
+   return response.json();
+  }throw new Error('Request failed!');
+
+},networkError => {
+  //Add a second argument to .then(), it will be an arrow function that will handle our failures. Separate the first callback function from the second with a comma. The second callback function takes a single parameter, networkError.In the code block of the second callback function, log networkError.message to the console.If we could not reach the endpoint at all, e.g., the server is down, then we would get this networkError.
+  console.log(networkError.message);
+}).then(jsonResponse => {return jsonResponse});
+
+
+
+chaining multiple calls or fetchs or operations
+
+--
+  fetch(endpoint).then(response => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error('Request failed!');
+  }, networkError => {
+    console.log(networkError.message)
+  }).then(jsonResponse => {
+    renderResponse(jsonResponse);
+  })
+  
