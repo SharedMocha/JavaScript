@@ -1,5 +1,13 @@
-VVIMP--ASYNC Returns  promise-->meaning u do0nt need to say 'new Promise' in the function that is async-  ]
-vvimp--tRUE BEAUTY OF ASYNC AWAIT IS WHEN WE USE TO CHAIN MULTIPE PROMISES.. instead of using .then().then()..async/await is wayu better
+***VVIMP--ASYNC Returns  promise-->meaning u do0nt need to say 'new Promise' in the function that is async-  ] ..For async await to work--u create child functions which have promise and call those child functions inside a aprent function with keyword async and no promise.
+example-
+async function makeBeans() {
+  let type = await shopForBeans();
+  let isSoft = await soakTheBeans(type);
+  let dinner = await cookTheBeans(isSoft);
+  console.log(dinner);
+}
+
+**** vvimp--tRUE BEAUTY OF ASYNC AWAIT IS WHEN WE USE TO CHAIN MULTIPE PROMISES.. instead of using .then().then()..async/await is wayu better
 
 
 ASYNC---->
