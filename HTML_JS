@@ -1,0 +1,3 @@
+Using JS to fetch html field value
+Read 1.)const submit = document.querySelector('#submit');
+Write 1.)   responseField.innerHTML = "<p>Try again!</p><p>There were no suggestions found!</p>"
